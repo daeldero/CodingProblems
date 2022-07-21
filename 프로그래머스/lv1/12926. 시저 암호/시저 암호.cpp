@@ -4,7 +4,7 @@
 using namespace std;
 
 string solution(string s, int n) {
-    string answer = "";
+    string answer;
     for (int i = 0; i < s.size(); ++i) {
         if (s[i] == ' ') answer += ' ';
         else {
