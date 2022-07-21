@@ -7,8 +7,8 @@ vector<int> solution(vector<int> numbers) {
     int n = numbers.size();
     set<int> arr;
     for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            if (i != j) arr.insert(numbers[i] + numbers[j]);
+        for (int j = i + 1; j < n; ++j) {
+            arr.insert(numbers[i] + numbers[j]);
         }
     }
     
