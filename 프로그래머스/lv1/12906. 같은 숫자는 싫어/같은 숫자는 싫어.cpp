@@ -15,3 +15,12 @@ vector<int> solution(vector<int> arr)
     }
     return answer;
 }
+
+/*
+vector<int> solution(vector<int> arr)
+{
+    arr.erase(unique(begin(arr), end(arr)), end(arr));
+    vector<int> answer = arr;
+    return answer;
+}
+*/
