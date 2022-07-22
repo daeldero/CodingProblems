@@ -8,6 +8,8 @@ struct Compare {
     const bool operator()(const string& s1, const string& s2) const {
         if (s1[n] == s2[n]) return s1 < s2;
         return s1[n] < s2[n];
+        
+        // return s1[i] == s2[i] ? s1 < s2 : s1[n] < s2[n];
     }
 };
 
