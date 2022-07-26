@@ -1,15 +1,13 @@
 #include <iostream>
-#include <set>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-set<int> SetSet(int n) {
-	set<int> st;
-	for (int i = 0; i < n; ++i) {
-		int x;
-		cin >> x;
-		st.insert(x);
-	}
-	return st;
+vector<int> Set(int n) {
+	vector<int> arr(n);
+	for (auto& elt : arr) cin >> elt;
+	sort(begin(arr), end(arr));
+	return arr;
 }
 
 int main()
@@ -20,16 +18,15 @@ int main()
 	int na, nb;
 	cin >> na >> nb;
 
-	auto a = SetSet(na);
-	auto b = SetSet(nb);
+	auto a = Set(na);
+	auto b = Set(nb);
 
-	for (const auto& elt : b) {
-		a.erase(elt);
-	}
+	vector<int> result;
+	set_difference(begin(a), end(a), begin(b), end(b), back_inserter(result));
 
-	cout << a.size() << '\n';
-	if (!a.empty()) {
-		for (const auto& elt : a) cout << elt << ' ';
+	cout << result.size() << '\n';
+	if (!result.empty()) {
+		for (const auto& elt : result) cout << elt << ' ';
 	}
 
 	return 0;
